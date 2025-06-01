@@ -16,6 +16,8 @@
 
 body, html{
     font-family: Lato, sans-serif;
+    height: 100%;
+    background-color: var(--main-gray)
 }
 
 /*  HEADER  */
@@ -27,6 +29,7 @@ header{
   height: 80px;
   background-color: var(--main-red);
   width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3)
 }
 
 #navbar{
@@ -48,12 +51,19 @@ header nav ul{
 ul li {
   list-style: none;
   color: var(--main-white);
-  font-size: 1.5rem;;
+  font-size: 1.5rem;
 }
 
 a{
   text-decoration: none;
-  color:  var(--main-white);;
+  color:  var(--main-white);
+}
+
+main{
+  display: block;
+  width: 100%;
+  overflow: visible;
+  background-color: transparent;
 }
 
 /*  WELCOME SECTION */
@@ -65,13 +75,13 @@ h1,h2{
 
 
 #welcome-section{
-  padding-top: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   background-color: var(--main-gray);
-  height: 100vh;
+  min-height: 100vh;
   font-size: 2.2rem;
 }
 
@@ -86,6 +96,19 @@ h1,h2{
 #projects{
    padding-top: 50px;
    background-color: var(--main-blue);
+}
+
+#projects h2{
+  font-size: 3rem;
+  padding-top: 3rem;
+}
+
+#projects hr{
+  width: 650px;
+  margin: 0 auto;
+  height: 2px;
+  background-color: var(--main-white);
+  margin-top: 5px;
 }
 
 #container-projects{
@@ -128,12 +151,13 @@ h1,h2{
 
 #contacts{
   background-color: var(--main-gray);
-  height: 30vw;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  padding: 4rem 2rem;
 }
 
  #contacts h2{
@@ -156,6 +180,11 @@ h1,h2{
 #contacts ul li a{
   color: var(--main-white);
   text-decoration: none;
+
+}
+
+i{
+  padding-right: 0.3rem;
 }
 
 /* FOOTER */
@@ -167,6 +196,7 @@ footer{
   display: flex;
   align-items: center;
   justify-content:space-around;
+  text-align: center;
   color: var(--main-white)
   
 }
@@ -179,4 +209,102 @@ footer ul{
 
 footer ul li{
   font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1020px){
+ 
+#container-projects{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 100%;  
+  padding: 2rem;
+ 
+}
+
+#projects h2{
+  font-size: 2rem;
+}
+
+#projects hr{
+  width: 450px;
+  margin: 0 auto;
+  height: 2px;
+  background-color: var(--main-white);
+  margin-top: 5px;
+}
+
+ #contacts h2{
+  font-size: 3rem;
+ }
+
+  footer ul{
+  flex-direction: column;
+  gap: 1rem;
+  
+}
+
+}
+
+@media screen and (max-width: 780px){
+
+  #contacts ul{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+}
+
+@media screen and (max-width: 600px){
+
+  header {
+    height: auto;
+    padding: 1rem 0;
+  }
+
+    header nav ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding-right: 0;
+  }
+
+   #welcome-section {
+    font-size: 1.6rem;
+    text-align: center;
+    padding-top: 3rem;
+  }
+
+  #container-projects {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .project-tile img {
+    height: 250px;
+  }
+
+  .project-tile a p {
+    font-size: 1.1rem;
+  }
+
+    #contacts h2 {
+    font-size: 2.2rem;
+  }
+
+  #contacts p {
+    font-size: 1rem;
+    padding: 0 1rem 2rem;
+    text-align: center;
+  }
+
+  #contacts ul {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
 }
